@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Finds PK | Women's Beauty & Personal Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+--primary: #25D366; /* WhatsApp Green */
+--primary-hover: #1da851;
+--brand-blue: #0097a7;
+--brand-orange: #ff6f00;
+--dark: #0f172a;
+--light-bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #334155;
+--text-muted: #64748b;
+--border: #e2e8f0;
+--accent: #dc2626;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+background-color: var(--light-bg);
+color: var(--text);
+line-height: 1.4;
+padding-bottom: 75px;
+}
+
+header {
+background: var(--card-bg);
+border-bottom: 1px solid var(--border);
+position: sticky;
+top: 0;
+z-index: 100;
+padding: 8px 16px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.brand-container {
+display: flex;
+align-items: center;
+gap: 10px;
+text-decoration: none;
+}
+
+.brand-logo-img {
+height: 38px;
+width: 38px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.brand-text {
+font-size: 1rem;
+font-weight: 800;
+color: var(--brand-orange);
+line-height: 1.1;
+}
+
+.brand-text span {
+color: var(--brand-blue);
+display: block;
+font-size: 0.65rem;
+letter-spacing: 0.5px;
+}
+
+.badge-cod {
+background: #fef2f2;
+color: var(--accent);
+font-size: 0.7rem;
+font-weight: 700;
+padding: 4px 8px;
+border-radius: 20px;
+border: 1px solid #fecaca;
+}
+
+.category-header {
+text-align: center;
+padding: 15px 10px 5px 10px;
+}
+
+.category-header h2 {
+font-size: 1.2rem;
+font-weight: 800;
+color: var(--dark);
+}
+
+.category-header p {
+font-size: 0.75rem;
+color: var(--text-muted);
+}
+
+.grid-container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 10px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+}
+
+@media (min-width: 768px) {
+.grid-container {
+grid-template-columns: repeat(4, 1fr);
+gap: 16px;
+padding: 15px 20px;
+}
+}
+
+.product-card {
+background: var(--card-bg);
+border-radius: 12px;
+border: 1px solid var(--border);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.product-image-wrap {
+position: relative;
+width: 100%;
+padding-top: 100%;
+background: #f1f5f9;
+}
+
+.product-image-wrap img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.sale-badge {
+position: absolute;
+top: 6px;
+left: 6px;
+background: var(--accent);
+color: white;
+font-weight: 700;
+font-size: 0.6rem;
+padding: 2px 6px;
+border-radius: 4px;
+text-transform: uppercase;
+}
+
+.product-info {
+padding: 10px;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+}
+
+.product-title {
+font-size: 0.8rem;
+font-weight: 700;
+color: var(--dark);
+margin-bottom: 6px;
+line-height: 1.25;
+height: 2.5em;
+overflow: hidden;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+
+.price-wrap {
+display: flex;
+align-items: baseline;
+gap: 6px;
+margin-bottom: 8px;
+}
+
+.current-price {
+font-size: 0.95rem;
+font-weight: 800;
+color: var(--dark);
+}
+
+.old-price {
+font-size: 0.75rem;
+color: var(--text-muted);
+text-decoration: line-through;
+}
+
+.btn-card-order {
+margin-top: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 4px;
+width: 100%;
+background: var(--primary);
+color: white;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.78rem;
+padding: 8px 4px;
+border-radius: 8px;
+text-align: center;
+}
+
+.bottom-cta {
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(--card-bg);
+border-top: 1px solid var(--border);
+padding: 10px 12px;
+z-index: 999;
+box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+}
+
+.btn-whatsapp-large {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+width: 100%;
+max-width: 500px;
+margin: 0 auto;
+background: var(--primary);
+color: white;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.9rem;
+padding: 10px;
+border-radius: 10px;
+}
+
+footer {
+text-align: center;
+font-size: 0.75rem;
+color: var(--text-muted);
+padding: 15px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="#" class="brand-container">
+<img src="logo.jpeg" alt="Easy Finds PK Logo" class="brand-logo-img">
+<div class="brand-text">
+EASY FINDS PK
+<span>ONLINE STORE</span>
+</div>
+</a>
+<span class="badge-cod">🚚 Cash on Delivery</span>
+</header>
+
+<div class="category-header">
+<h2>🌸 Women's Personal Care & Beauty</h2>
+<p>100% Quality Tested • Fast Delivery Across Pakistan</p>
+</div>
+
+<div class="grid-container">
+
+<!-- Product 1 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">HOT</span>
+<img src="product1.jpg" alt="3in1 OneStep Hot Air Brush">
+</div>
+<div class="product-info">
+<h3 class="product-title">3in1 OneStep Hot Air Brush Dryer Straightener</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 1,799</span>
+<span class="old-price">Rs. 2,300</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%203in1%20OneStep%20Hot%20Air%20Brush%20for%20Rs.%201799." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+<!-- Product 2 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">SALE</span>
+<img src="product2.jpg" alt="HQT-909 Electric Hair Brush Straightener">
+</div>
+<div class="product-info">
+<h3 class="product-title">HQT-909 Electric Hair Brush Straightener</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 1,050</span>
+<span class="old-price">Rs. 1,700</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20HQT-909%20Hair%20Straightener%20for%20Rs.%201050." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+<!-- Product 3 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">SALE</span>
+<img src="product3.jpg" alt="3in1 Golden Precision Hair Remover">
+</div>
+<div class="product-info">
+<h3 class="product-title">3in1 Golden Precision Hair Remover Device</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 1,299</span>
+<span class="old-price">Rs. 1,800</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%203in1%20Golden%20Hair%20Remover%20for%20Rs.%201299." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+<!-- Product 4 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">SALE</span>
+<img src="product4.jpg" alt="2in1 Flawless Hair Trimmer">
+</div>
+<div class="product-info">
+<h3 class="product-title">2in1 Flawless Hair Trimmer with Box</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 820</span>
+<span class="old-price">Rs. 1,100</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%202in1%20Flawless%20Hair%20Trimmer%20for%20Rs.%20820." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+<!-- Product 5 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">SALE</span>
+<img src="product5.jpg" alt="Square 2in1 Eyebrow & Facial Hair Remover">
+</div>
+<div class="product-info">
+<h3 class="product-title">Square 2in1 Eyebrow & Facial Hair Remover</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 899</span>
+<span class="old-price">Rs. 1,200</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20Square%202in1%20Eyebrow%20Remover%20for%20Rs.%20899." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+<!-- Product 6 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">HOT</span>
+<img src="product6.jpg" alt="Lady Electric Shaver 2-in-1 Dual Head">
+</div>
+<div class="product-info">
+<h3 class="product-title">Lady Electric Shaver 2-in-1 Dual Head</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 1,499</span>
+<span class="old-price">Rs. 2,000</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20Lady%20Electric%20Shaver%202-in-1%20for%20Rs.%201499." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+<!-- Product 7 -->
+<div class="product-card">
+<div class="product-image-wrap">
+<span class="sale-badge">HOT</span>
+<img src="product7.jpg" alt="IPX7 Waterproof Electric Razor">
+</div>
+<div class="product-info">
+<h3 class="product-title">Electric Razor IPX7 Waterproof Wet & Dry</h3>
+<div class="price-wrap">
+<span class="current-price">Rs. 2,300</span>
+<span class="old-price">Rs. 2,900</span>
+</div>
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20IPX7%20Waterproof%20Electric%20Razor%20for%20Rs.%202300." class="btn-card-order" target="_blank">
+📲 Order (COD)
+</a>
+</div>
+</div>
+
+</div>
+
+<div class="bottom-cta">
+<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20ask%20about%20your%20products." class="btn-whatsapp-large" target="_blank">
+💬 Chat on WhatsApp to Order Anything
+</a>
+</div>
+
+<footer>
+<p>© 2026 Easy Finds PK. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
