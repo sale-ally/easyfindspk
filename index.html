@@ -6,6 +6,37 @@
 <title>Easy Finds PK | Women's Beauty & Personal Care</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
+.multi-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.img-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.img-slider::-webkit-scrollbar {
+  display: none;
+}
+.img-slider img {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+.swipe-hint {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  pointer-events: none;
+}
 :root {
 --primary: #25D366; /* WhatsApp Green */
 --primary-hover: #1da851;
@@ -399,6 +430,141 @@ EASY FINDS PK
 📲 Order (COD)
 </a>
 </div>
+</div>
+
+<!-- Product 8 -->
+<div class="product-card">
+  <div class="product-image-wrap">
+    <span class="sale-badge">HOT</span>
+    <img src="product8.jpg" alt="Remington Keratin Protect Intelligent Straightener">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Remington Keratin Protect Intelligent Straightener SBT1100</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 1,599</span>
+      <span class="old-price">Rs. 2,100</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Remington%20Keratin%20Protect%20Straightener%20(Rs.%201599)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
+</div>
+
+<!-- Product 9 -->
+<div class="product-card">
+  <div class="product-image-wrap">
+    <span class="sale-badge">HOT</span>
+    <img src="product9.jpg" alt="5 in 1 Blackhead Remover Machine">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">5 in 1 Blackhead Remover & Vacuum Suction Tool</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 999</span>
+      <span class="old-price">Rs. 1,500</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%205%20in%201%20Blackhead%20Remover%20(Rs.%20999)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
+</div>
+
+<!-- Product 10 -->
+<div class="product-card">
+  <div class="product-image-wrap">
+    <span class="sale-badge">HOT</span>
+    <img src="product10.jpg" alt="5 in 1 Hair Dryer Hot Air Brush">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">5 in 1 Hair Dryer Hot Air Brush Volumizer & Curler</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 2,399</span>
+      <span class="old-price">Rs. 3,000</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%205%20in%201%20Hair%20Dryer%20Brush%20(Rs.%202399)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
+</div>
+
+<!-- Product 11 -->
+<div class="product-card">
+  <div class="product-image-wrap">
+    <span class="sale-badge">HOT</span>
+    <img src="product11.jpg" alt="360 Rotating Jewelry Organizer">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">360 Rotating Jewelry Organizer with Dual Lipstick Tray</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 3,300</span>
+      <span class="old-price">Rs. 4,000</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20360%20Jewelry%20Organizer%20(Rs.%203300)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
+</div>
+
+<!-- Product 12 -->
+<div class="product-card">
+  <div class="product-image-wrap">
+    <span class="sale-badge">HOT</span>
+    <img src="product12.jpg" alt="Kansa Massager">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Kansa Wand Facial & Body Massager</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 699</span>
+      <span class="old-price">Rs. 1,200</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Kansa%20Massager%20(Rs.%20699)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
+</div>
+
+<!-- Product 13 (2 Images) -->
+<div class="product-card">
+  <div class="product-image-wrap multi-img-wrap">
+    <span class="sale-badge">HOT</span>
+    <div class="img-slider">
+      <img src="product13_a.jpg" alt="Immersive Head SPA Spray Comb Image 1">
+      <img src="product13_b.jpg" alt="Immersive Head SPA Spray Comb Image 2">
+    </div>
+    <div class="swipe-hint">👈 Swipe for more 👉</div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Immersive Head SPA Rechargeable Spray Comb</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 2,399</span>
+      <span class="old-price">Rs. 3,000</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Head%20SPA%20Spray%20Comb%20(Rs.%202399)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
+</div>
+
+<!-- Product 14 (3 Images) -->
+<div class="product-card">
+  <div class="product-image-wrap multi-img-wrap">
+    <span class="sale-badge">HOT</span>
+    <div class="img-slider">
+      <img src="product14_a.jpg" alt="Portable Electric Oral Irrigator Image 1">
+      <img src="product14_b.jpg" alt="Portable Electric Oral Irrigator Image 2">
+      <img src="product14_c.jpg" alt="Portable Electric Oral Irrigator Image 3">
+    </div>
+    <div class="swipe-hint">👈 Swipe for more 👉</div>
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Portable Electric Oral Irrigator Dental Water Jet (4 Nozzles, 3 Modes)</h3>
+    <div class="price-wrap">
+      <span class="current-price">Rs. 2,000</span>
+      <span class="old-price">Rs. 2,800</span>
+    </div>
+    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Dental%20Water%20Jet%20(Rs.%202000)." class="btn-card-order" target="_blank">
+      📲 Order (COD)
+    </a>
+  </div>
 </div>
 
 </div>
