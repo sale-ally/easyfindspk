@@ -6,20 +6,155 @@
 <title>Easy Finds PK | Women's Beauty & Personal Care</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-.multi-img-wrap {
+:root {
+  --primary: #25D366;
+  --primary-hover: #1da851;
+  --brand-blue: #0097a7;
+  --brand-orange: #ff6f00;
+  --dark: #0f172a;
+  --light-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #334155;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text);
+  line-height: 1.4;
+  padding-bottom: 75px;
+}
+
+header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(1.35);
+  border: 2px solid #00bcd4;
+  box-shadow: 0 0 10px #00e5ff, 0 0 4px #00bcd4;
+  background: #fff;
+}
+
+.brand-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--brand-orange);
+  line-height: 1.1;
+}
+
+.brand-text span {
+  color: var(--brand-blue);
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.badge-cod {
+  background: #fef2f2;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid #fecaca;
+}
+
+.category-header {
+  text-align: center;
+  padding: 15px 10px 5px 10px;
+}
+
+.category-header h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.category-header p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image-wrap {
   position: relative;
   width: 100%;
+  padding-top: 100%;
+  background: #f1f5f9;
   overflow: hidden;
+}
+
+.product-image-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Multi Image Slider Fix */
+.multi-img-wrap {
+  padding-top: 0 !important;
+  height: 200px;
 }
 
 .img-slider {
   display: flex !important;
   flex-direction: row !important;
-  overflow-x: scroll !important;
+  overflow-x: auto !important;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   width: 100%;
+  height: 100%;
 }
 
 .img-slider::-webkit-scrollbar {
@@ -29,8 +164,7 @@
 .img-slider img {
   flex: 0 0 100% !important;
   width: 100% !important;
-  min-width: 100% !important;
-  max-width: 100% !important;
+  height: 100% !important;
   scroll-snap-align: start;
   object-fit: cover;
   display: block;
@@ -40,564 +174,221 @@
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   color: #fff;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 3px 8px;
   border-radius: 12px;
   pointer-events: none;
   z-index: 5;
 }
-  right: 6px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  pointer-events: none;
-}
-:root {
---primary: #25D366; /* WhatsApp Green */
---primary-hover: #1da851;
---brand-blue: #0097a7;
---brand-orange: #ff6f00;
---dark: #0f172a;
---light-bg: #f8fafc;
---card-bg: #ffffff;
---text: #334155;
---text-muted: #64748b;
---border: #e2e8f0;
---accent: #dc2626;
-}
-
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-body {
-background-color: var(--light-bg);
-color: var(--text);
-line-height: 1.4;
-padding-bottom: 75px;
-}
-
-header {
-background: var(--card-bg);
-border-bottom: 1px solid var(--border);
-position: sticky;
-top: 0;
-z-index: 100;
-padding: 8px 16px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-}
-
-.brand-container {
-display: flex;
-align-items: center;
-gap: 10px;
-text-decoration: none;
-}
-
-.brand-logo-img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  transform: scale(1.35); /* Zooms inside the image to remove outer white space */
-  border: 2px solid #00bcd4; /* Bright cyan inner ring */
-  box-shadow: 0 0 10px #00e5ff, 0 0 4px #00bcd4; /* Neon glowing effect */
-  background: #fff;
-}
-
-.brand-text {
-font-size: 1rem;
-font-weight: 800;
-color: var(--brand-orange);
-line-height: 1.1;
-}
-
-.brand-text span {
-color: var(--brand-blue);
-display: block;
-font-size: 0.65rem;
-letter-spacing: 0.5px;
-}
-
-.badge-cod {
-background: #fef2f2;
-color: var(--accent);
-font-size: 0.7rem;
-font-weight: 700;
-padding: 4px 8px;
-border-radius: 20px;
-border: 1px solid #fecaca;
-}
-
-.category-header {
-text-align: center;
-padding: 15px 10px 5px 10px;
-}
-
-.category-header h2 {
-font-size: 1.2rem;
-font-weight: 800;
-color: var(--dark);
-}
-
-.category-header p {
-font-size: 0.75rem;
-color: var(--text-muted);
-}
-
-.grid-container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 10px;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 10px;
-}
-
-@media (min-width: 768px) {
-.grid-container {
-grid-template-columns: repeat(4, 1fr);
-gap: 16px;
-padding: 15px 20px;
-}
-}
-
-.product-card {
-background: var(--card-bg);
-border-radius: 12px;
-border: 1px solid var(--border);
-overflow: hidden;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-}
-
-.product-image-wrap {
-position: relative;
-width: 100%;
-padding-top: 100%;
-background: #f1f5f9;
-}
-
-.product-image-wrap img {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
 
 .sale-badge {
-position: absolute;
-top: 6px;
-left: 6px;
-background: var(--accent);
-color: white;
-font-weight: 700;
-font-size: 0.6rem;
-padding: 2px 6px;
-border-radius: 4px;
-text-transform: uppercase;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 2;
 }
 
 .product-info {
-padding: 10px;
-display: flex;
-flex-direction: column;
-flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .product-title {
-font-size: 0.8rem;
-font-weight: 700;
-color: var(--dark);
-margin-bottom: 6px;
-line-height: 1.25;
-height: 2.5em;
-overflow: hidden;
-display: -webkit-box;
--webkit-line-clamp: 2;
--webkit-box-orient: vertical;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.4em;
 }
 
 .price-wrap {
-display: flex;
-align-items: baseline;
-gap: 6px;
-margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .current-price {
-font-size: 0.95rem;
-font-weight: 800;
-color: var(--dark);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dark);
 }
 
 .old-price {
-font-size: 0.75rem;
-color: var(--text-muted);
-text-decoration: line-through;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
 }
 
 .btn-card-order {
-margin-top: auto;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 4px;
-width: 100%;
-background: var(--primary);
-color: white;
-text-decoration: none;
-font-weight: 700;
-font-size: 0.78rem;
-padding: 8px 4px;
-border-radius: 8px;
-text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  gap: 6px;
+  width: 100%;
 }
 
-.bottom-cta {
-position: fixed;
-bottom: 0;
-left: 0;
-right: 0;
-background: var(--card-bg);
-border-top: 1px solid var(--border);
-padding: 10px 12px;
-z-index: 999;
-box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
-}
-
-.btn-whatsapp-large {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-width: 100%;
-max-width: 500px;
-margin: 0 auto;
-background: var(--primary);
-color: white;
-text-decoration: none;
-font-weight: 700;
-font-size: 0.9rem;
-padding: 10px;
-border-radius: 10px;
+.floating-whatsapp {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 999;
 }
 
 footer {
-text-align: center;
-font-size: 0.75rem;
-color: var(--text-muted);
-padding: 15px;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 </style>
 </head>
 <body>
 
 <header>
-<a href="#" class="brand-container">
-<img src="logo.jpeg" alt="Easy Finds PK Logo" class="brand-logo-img">
-<div class="brand-text">
-EASY FINDS PK
-<span>ONLINE STORE</span>
-</div>
-</a>
-<span class="badge-cod">🚚 Cash on Delivery</span>
+  <a href="#" class="brand-container">
+    <img src="logo.jpg" alt="Easy Finds PK Logo" class="brand-logo-img">
+    <div class="brand-text">
+      EASY FINDS PK
+      <span>ONLINE STORE</span>
+    </div>
+  </a>
+  <span class="badge-cod">🚚 Cash on Delivery</span>
 </header>
 
 <div class="category-header">
-<h2>🌸 Women's Personal Care & Beauty</h2>
-<p>100% Quality Tested • Fast Delivery Across Pakistan</p>
+  <h1>🌸 Women's Personal Care & Beauty</h1>
+  <p>100% Quality Tested • Fast Delivery Across Pakistan</p>
 </div>
 
 <div class="grid-container">
 
-<!-- Product 1 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">HOT</span>
-<img src="product1.jpg" alt="3in1 OneStep Hot Air Brush">
-</div>
-<div class="product-info">
-<h3 class="product-title">3in1 OneStep Hot Air Brush Dryer Straightener</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 1,799</span>
-<span class="old-price">Rs. 2,300</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%203in1%20OneStep%20Hot%20Air%20Brush%20for%20Rs.%201799." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 2 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">SALE</span>
-<img src="product2.jpg" alt="HQT-909 Electric Hair Brush Straightener">
-</div>
-<div class="product-info">
-<h3 class="product-title">HQT-909 Electric Hair Brush Straightener</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 1,050</span>
-<span class="old-price">Rs. 1,700</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20HQT-909%20Hair%20Straightener%20for%20Rs.%201050." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 3 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">SALE</span>
-<img src="product3.jpg" alt="3in1 Golden Precision Hair Remover">
-</div>
-<div class="product-info">
-<h3 class="product-title">3in1 Golden Precision Hair Remover Device</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 1,299</span>
-<span class="old-price">Rs. 1,800</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%203in1%20Golden%20Hair%20Remover%20for%20Rs.%201299." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 4 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">SALE</span>
-<img src="product4.jpg" alt="2in1 Flawless Hair Trimmer">
-</div>
-<div class="product-info">
-<h3 class="product-title">2in1 Flawless Hair Trimmer with Box</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 820</span>
-<span class="old-price">Rs. 1,100</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%202in1%20Flawless%20Hair%20Trimmer%20for%20Rs.%20820." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 5 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">SALE</span>
-<img src="product5.jpg" alt="Square 2in1 Eyebrow & Facial Hair Remover">
-</div>
-<div class="product-info">
-<h3 class="product-title">Square 2in1 Eyebrow & Facial Hair Remover</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 899</span>
-<span class="old-price">Rs. 1,200</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20Square%202in1%20Eyebrow%20Remover%20for%20Rs.%20899." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 6 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">HOT</span>
-<img src="product6.jpg" alt="Lady Electric Shaver 2-in-1 Dual Head">
-</div>
-<div class="product-info">
-<h3 class="product-title">Lady Electric Shaver 2-in-1 Dual Head</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 1,499</span>
-<span class="old-price">Rs. 2,000</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20Lady%20Electric%20Shaver%202-in-1%20for%20Rs.%201499." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 7 -->
-<div class="product-card">
-<div class="product-image-wrap">
-<span class="sale-badge">HOT</span>
-<img src="product7.jpg" alt="IPX7 Waterproof Electric Razor">
-</div>
-<div class="product-info">
-<h3 class="product-title">Electric Razor IPX7 Waterproof Wet & Dry</h3>
-<div class="price-wrap">
-<span class="current-price">Rs. 2,300</span>
-<span class="old-price">Rs. 2,900</span>
-</div>
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20the%20IPX7%20Waterproof%20Electric%20Razor%20for%20Rs.%202300." class="btn-card-order" target="_blank">
-📲 Order (COD)
-</a>
-</div>
-</div>
-
-<!-- Product 8 -->
-<div class="product-card">
-  <div class="product-image-wrap">
-    <span class="sale-badge">HOT</span>
-    <img src="product8.jpg" alt="Remington Keratin Protect Intelligent Straightener">
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">Remington Keratin Protect Intelligent Straightener SBT1100</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 1,599</span>
-      <span class="old-price">Rs. 2,100</span>
+  <!-- Product 11 -->
+  <div class="product-card">
+    <div class="product-image-wrap">
+      <span class="sale-badge">HOT</span>
+      <img src="product11.jpg" alt="360 Rotating Jewelry Organizer">
     </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Remington%20Keratin%20Protect%20Straightener%20(Rs.%201599)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
-  </div>
-</div>
-
-<!-- Product 9 -->
-<div class="product-card">
-  <div class="product-image-wrap">
-    <span class="sale-badge">HOT</span>
-    <img src="product9.jpg" alt="5 in 1 Blackhead Remover Machine">
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">5 in 1 Blackhead Remover & Vacuum Suction Tool</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 999</span>
-      <span class="old-price">Rs. 1,500</span>
+    <div class="product-info">
+      <h3 class="product-title">360 Rotating Jewelry Organizer with Dual Lipstick Tray</h3>
+      <div class="price-wrap">
+        <span class="current-price">Rs. 3,300</span>
+        <span class="old-price">Rs. 4,000</span>
+      </div>
+      <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20360%20Jewelry%20Organizer%20(Rs.%203300)." class="btn-card-order" target="_blank">
+        📲 Order (COD)
+      </a>
     </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%205%20in%201%20Blackhead%20Remover%20(Rs.%20999)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
   </div>
-</div>
 
-<!-- Product 10 -->
-<div class="product-card">
-  <div class="product-image-wrap">
-    <span class="sale-badge">HOT</span>
-    <img src="product10.jpg" alt="5 in 1 Hair Dryer Hot Air Brush">
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">5 in 1 Hair Dryer Hot Air Brush Volumizer & Curler</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 2,399</span>
-      <span class="old-price">Rs. 3,000</span>
+  <!-- Product 12 -->
+  <div class="product-card">
+    <div class="product-image-wrap">
+      <span class="sale-badge">HOT</span>
+      <img src="product12.jpg" alt="Kansa Massager">
     </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%205%20in%201%20Hair%20Dryer%20Brush%20(Rs.%202399)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
+    <div class="product-info">
+      <h3 class="product-title">Kansa Wand Facial & Body Massager</h3>
+      <div class="price-wrap">
+        <span class="current-price">Rs. 699</span>
+        <span class="old-price">Rs. 1,200</span>
+      </div>
+      <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Kansa%20Massager%20(Rs.%20699)." class="btn-card-order" target="_blank">
+        📲 Order (COD)
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- Product 11 -->
-<div class="product-card">
-  <div class="product-image-wrap">
-    <span class="sale-badge">HOT</span>
-    <img src="product11.jpg" alt="360 Rotating Jewelry Organizer">
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">360 Rotating Jewelry Organizer with Dual Lipstick Tray</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 3,300</span>
-      <span class="old-price">Rs. 4,000</span>
+  <!-- Product 13 (2 Images Slider) -->
+  <div class="product-card">
+    <div class="product-image-wrap multi-img-wrap">
+      <span class="sale-badge">HOT</span>
+      <div class="img-slider">
+        <img src="product13_a.jpg" alt="Immersive Head SPA 1">
+        <img src="product13_b.jpg" alt="Immersive Head SPA 2">
+      </div>
+      <div class="swipe-hint">👈 Swipe 👉</div>
     </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20360%20Jewelry%20Organizer%20(Rs.%203300)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
+    <div class="product-info">
+      <h3 class="product-title">Immersive Head SPA Rechargeable Spray Comb</h3>
+      <div class="price-wrap">
+        <span class="current-price">Rs. 2,399</span>
+        <span class="old-price">Rs. 3,000</span>
+      </div>
+      <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Head%20SPA%20Spray%20Comb%20(Rs.%202399)." class="btn-card-order" target="_blank">
+        📲 Order (COD)
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- Product 12 -->
-<div class="product-card">
-  <div class="product-image-wrap">
-    <span class="sale-badge">HOT</span>
-    <img src="product12.jpg" alt="Kansa Massager">
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">Kansa Wand Facial & Body Massager</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 699</span>
-      <span class="old-price">Rs. 1,200</span>
+  <!-- Product 14 (3 Images Slider) -->
+  <div class="product-card">
+    <div class="product-image-wrap multi-img-wrap">
+      <span class="sale-badge">HOT</span>
+      <div class="img-slider">
+        <img src="product14_a.jpg" alt="Oral Irrigator 1">
+        <img src="product14_b.jpg" alt="Oral Irrigator 2">
+        <img src="product14_c.jpg" alt="Oral Irrigator 3">
+      </div>
+      <div class="swipe-hint">👈 Swipe 👉</div>
     </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Kansa%20Massager%20(Rs.%20699)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
+    <div class="product-info">
+      <h3 class="product-title">Portable Electric Oral Irrigator Dental Water Jet</h3>
+      <div class="price-wrap">
+        <span class="current-price">Rs. 2,000</span>
+        <span class="old-price">Rs. 2,800</span>
+      </div>
+      <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Dental%20Water%20Jet%20(Rs.%202000)." class="btn-card-order" target="_blank">
+        📲 Order (COD)
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- Product 13 (2 Images) -->
-<div class="product-card">
-  <div class="product-image-wrap multi-img-wrap">
-    <span class="sale-badge">HOT</span>
-    <div class="img-slider">
-      <img src="product13_a.jpg" alt="Immersive Head SPA Spray Comb Image 1">
-      <img src="product13_b.jpg" alt="Immersive Head SPA Spray Comb Image 2">
-    </div>
-    <div class="swipe-hint">👈 Swipe for more 👉</div>
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">Immersive Head SPA Rechargeable Spray Comb</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 2,399</span>
-      <span class="old-price">Rs. 3,000</span>
-    </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Head%20SPA%20Spray%20Comb%20(Rs.%202399)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
-  </div>
-</div>
-
-<!-- Product 14 (3 Images) -->
-<div class="product-card">
-  <div class="product-image-wrap multi-img-wrap">
-    <span class="sale-badge">HOT</span>
-    <div class="img-slider">
-      <img src="product14_a.jpg" alt="Portable Electric Oral Irrigator Image 1">
-      <img src="product14_b.jpg" alt="Portable Electric Oral Irrigator Image 2">
-      <img src="product14_c.jpg" alt="Portable Electric Oral Irrigator Image 3">
-    </div>
-    <div class="swipe-hint">👈 Swipe for more 👉</div>
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">Portable Electric Oral Irrigator Dental Water Jet (4 Nozzles, 3 Modes)</h3>
-    <div class="price-wrap">
-      <span class="current-price">Rs. 2,000</span>
-      <span class="old-price">Rs. 2,800</span>
-    </div>
-    <a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20order%20Dental%20Water%20Jet%20(Rs.%202000)." class="btn-card-order" target="_blank">
-      📲 Order (COD)
-    </a>
-  </div>
-</div>
-
-</div>
-
-<div class="bottom-cta">
-<a href="https://wa.me/923318979918?text=Hi%20Easy%20Finds%20PK!%20I%20want%20to%20ask%20about%20your%20products." class="btn-whatsapp-large" target="_blank">
-💬 Chat on WhatsApp to Order Anything
-</a>
 </div>
 
 <footer>
-<p>© 2026 Easy Finds PK. All Rights Reserved.</p>
+  <p>© 2026 Easy Finds PK. All Rights Reserved.</p>
 </footer>
+
+<a href="https://wa.me/923318979918" class="floating-whatsapp" target="_blank">
+  💬 Chat on WhatsApp to Order Anything
+</a>
 
 </body>
 </html>
